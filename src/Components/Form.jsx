@@ -25,6 +25,7 @@ const Form = () => {
 
   return (
     <div>
+      
       {!show ? 
       <form onSubmit={handlerSubmit}>
           <label>Nombre Completo:</label>
@@ -34,8 +35,8 @@ const Form = () => {
           <br />
           <button>Enviar</button>
       </form>
-      : `${user.name} sus datos fuenon enviados ok...`}
-      {err ? 'Verifique los datos' : null}
+      : `Gracias ${user.name}, te contactaremos cuando antes vía mail !`}
+      {err ? ' Por favor verifique su información nuevamente' : null}
     </div>
   );
 };

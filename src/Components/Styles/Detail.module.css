@@ -1,0 +1,13 @@
+.mainBtn button{
+    justify-content: center;
+    align-items: center;
+}
+
+.bgThead {
+    background-color: rgb(142, 140, 140);
+}
+
+.bgTboby {
+    background-color: rgb(219, 216, 216);
+}
+

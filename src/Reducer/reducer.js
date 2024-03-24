@@ -7,7 +7,9 @@ export const reducer = (state, action) => {
         case 'VIEW_LIST':
             return{...state, data: action.payload}
         case 'CARD_SELECTED':
-            return{...state, dentistaSelect: action.payload}        
+            return{...state, dentistaSelect: action.payload} 
+        case 'CHANGE_THEME':
+            return {state, theme: action.payload}           
     }
     
 }
