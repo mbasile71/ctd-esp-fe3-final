@@ -12,7 +12,7 @@ export const ContextGlobal = createContext();
   theme: "",
    data: [],
    dentistaSelect: {},
-   favs: []
+   favs: JSON.parse(localStorage.getItem('favs')) || []
 }
 
 export const ContextProvider = ({ children }) => {
@@ -26,7 +26,11 @@ export const ContextProvider = ({ children }) => {
     .then(res => dispatch({type: 'VIEW_LIST', payload: res.data}))
     
   }, [])
-  
+
+  useEffect(() => {
+     localStorage.setItem('favs', JSON.stringify(state.favs))
+  }, [state.favs])
+     
 
   return (
     <ContextGlobal.Provider value={{state, dispatch}}>

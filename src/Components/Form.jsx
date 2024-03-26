@@ -35,7 +35,7 @@ const Form = () => {
           <br />
           <button>Enviar</button>
       </form>
-      : `Gracias ${user.name}, te contactaremos cuando antes vía mail !`}
+      : `Gracias ${user.name}, te contactaremos cuanto antes vía mail !`}
       {err ? ' Por favor verifique su información nuevamente' : null}
     </div>
   );

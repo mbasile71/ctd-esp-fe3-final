@@ -2,10 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { routes } from './utils/routes'
 import NavStyle from '../Components/Styles/Navbar.module.css'
+import '../../src/index.css'
+import { useContextGlobal } from './utils/global.context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+
+  const {state, dispatch} = useContextGlobal()
 
   return (
     <nav className={NavStyle.mainModule}>
@@ -18,7 +22,7 @@ const Navbar = () => {
       <Link to={routes.contacto}><h4>Contacto</h4></Link>
 
 
-      <button >Change theme</button>
+      <button onClick={() => dispatch({type: 'CHANGE_THEME', payload: style=(classList.toggle('dark'))})}>Change theme</button>
     </nav>
   )
 }
