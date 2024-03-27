@@ -9,7 +9,7 @@ import { reducer } from "../../Reducer/reducer";
 export const ContextGlobal = createContext();
 
 /*export*/ const initialState = {
-  theme: "",
+   theme: false,
    data: [],
    dentistaSelect: {},
    favs: JSON.parse(localStorage.getItem('favs')) || []

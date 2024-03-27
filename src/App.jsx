@@ -7,10 +7,16 @@ import Home from "./Routes/Home";
 import Favs from './Routes/Favs'
 import Detail from './Routes/Detail'
 import Contact from './Routes/Contact'
+import { useContextGlobal } from "./Components/utils/global.context";
+
+
 
 function App() {
+
+const {state} = useContextGlobal()  
   return (
-      <div className="App">
+      <div className={state.theme ? '.dark > a' : 'dark'}>
+          
           <Navbar/>
 
           <Routes>
@@ -21,6 +27,7 @@ function App() {
           </Routes>
 
           <Footer/>
+                    
       </div>
   );
 }

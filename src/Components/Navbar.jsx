@@ -11,6 +11,10 @@ const Navbar = () => {
 
   const {state, dispatch} = useContextGlobal()
 
+  const toggleThme = () => {
+    dispatch({type: 'CHANGE_THEME'})
+  }
+
   return (
     <nav className={NavStyle.mainModule}>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
@@ -22,7 +26,7 @@ const Navbar = () => {
       <Link to={routes.contacto}><h4>Contacto</h4></Link>
 
 
-      <button onClick={() => dispatch({type: 'CHANGE_THEME', payload: style=(classList.toggle('dark'))})}>Change theme</button>
+      <button onClick={toggleThme}>Change theme</button>
     </nav>
   )
 }

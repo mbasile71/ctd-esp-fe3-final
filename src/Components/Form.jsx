@@ -1,8 +1,11 @@
 import React, { useReducer, useState } from "react";
+import { useContextGlobal } from "./utils/global.context";
 
 
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
+
+  //const {state} = useContextGlobal()
 
   const [user, setUser] = useState({
     name: '',
@@ -25,7 +28,6 @@ const Form = () => {
 
   return (
     <div>
-      
       {!show ? 
       <form onSubmit={handlerSubmit}>
           <label>Nombre Completo:</label>
