@@ -5,8 +5,6 @@ import { useContextGlobal } from "./utils/global.context";
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
 
-  //const {state} = useContextGlobal()
-
   const [user, setUser] = useState({
     name: '',
     email: ''
@@ -37,8 +35,8 @@ const Form = () => {
           <br />
           <button>Enviar</button>
       </form>
-      : `Gracias ${user.name}, te contactaremos cuanto antes vía mail !`}
-      {err ? ' Por favor verifique su información nuevamente' : null}
+      : <h3>Gracias {user.name}, te contactaremos cuanto antes vía mail !</h3>}
+      {err ? <h3 style={{color:'red'}}>Por favor verifique su información nuevamente</h3> : null}
     </div>
   );
 };

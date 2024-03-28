@@ -116,7 +116,28 @@ tr:nth-child(even) {
 .dark{
   background-color: #12121296;
   color: white;
+  border: solid 1px #12121296;
+  
 }
 .dark > a {
   color: white;
+}
+
+.dark .card {
+  border: solid 1px white;
+  box-shadow:0 4px 8px white;
+}
+
+.light{
+  background-color: white;
+  color: black;
+  border: solid 1px white;
+  
+}
+.light > a {
+  color:  black;
+}
+
+.light .card {
+  box-shadow:0 4px 8px black;
 }

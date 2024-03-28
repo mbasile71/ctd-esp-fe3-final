@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useContextGlobal } from "./utils/global.context";
 import { routes } from "./utils/routes";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Favs from "../Routes/Favs";
 
 
@@ -9,13 +9,24 @@ const Card = ({item}) => {
 
   const {state, dispatch} = useContextGlobal()
 
-  //const {username, id} = useState(fav) 
+  const { pathname } = useLocation()
+
+  const mostrarButton = pathname === '/favs';
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-    dispatch({type: 'ADD_FAV', payload: item})
-    alert('Datos guardados en el localStorage...')
-    //console.log(item)
+    const nuevoId = item.id
+
+    const existeId = state.favs.some(item => item.id === nuevoId);
+
+    if (existeId) {
+      alert('No se puede agregar')
+    } else {
+      dispatch({type: 'ADD_FAV', payload: item})
+      alert('Datos guardados en el localStorage...')
+    }
+    
+    
   }
   
   return (
@@ -30,8 +41,8 @@ const Card = ({item}) => {
         
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
-          
+        {/*<button onClick={addFav} className="favButton">Add fav</button>*/}
+        {mostrarButton ? null : <button onClick={addFav} className="favButton">Add fav</button> }
     </div>
   );
 };

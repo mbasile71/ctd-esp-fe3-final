@@ -14,16 +14,13 @@ const Detail = () => {
   const params = useParams()
   const navigate = useNavigate()
   
-  //const [data, useData] = useState('')
-  
-  const url = 'https://jsonplaceholder.typicode.com/users/' + params.id
+ const url = 'https://jsonplaceholder.typicode.com/users/' + params.id
   console.log('aca' + params.id)
 
   const {state, dispatch} = useContextGlobal()
 
   useEffect(() => {
     axios(url)
-    //.then(res => useData(res.data))
     .then(res => dispatch({type: 'CARD_SELECTED', payload: res.data}))
   }, [])
 
@@ -35,14 +32,6 @@ const Detail = () => {
     <>
     <div className={detailStyle.mainContext}>
           <h1>Datos del dentista con ID: {params.id} </h1>
-          {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-          {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-          {/*<h4>{state.dentistaSelect.name}</h4>
-          <h4>{state.dentistaSelect.email}</h4>
-          <h4>{state.dentistaSelect.phone}</h4>
-          <h4>{state.dentistaSelect.website}</h4>
-          <button onClick={HandlerClick}>Volver al Home</button>*/}
-
           <table>
             <thead>
               <tr className={detailStyle.bgThead}>

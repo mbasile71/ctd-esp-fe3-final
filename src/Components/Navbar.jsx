@@ -22,7 +22,6 @@ const Navbar = () => {
 
       <Link to={routes.home}><h4>Home</h4></Link>
       <Link to={routes.favs}><h4>Destacados</h4></Link>
-      {/*<Link to={routes.dentistaId}><h4>Ver Dentista</h4></Link>*/}
       <Link to={routes.contacto}><h4>Contacto</h4></Link>
 
 

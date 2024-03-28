@@ -13,9 +13,10 @@ import { useContextGlobal } from "./Components/utils/global.context";
 
 function App() {
 
-const {state} = useContextGlobal()  
+  const {state} = useContextGlobal() 
+
   return (
-      <div className={state.theme ? '.dark > a' : 'dark'}>
+      <div className={state.theme ? 'dark' : 'light'}>
           
           <Navbar/>
 
